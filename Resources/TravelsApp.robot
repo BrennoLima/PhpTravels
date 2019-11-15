@@ -1,6 +1,7 @@
 *** Settings ***
 Resource  PO/LandingPage.robot
 Resource  PO/LoginPage.robot
+Resource  PO/UserPage.robot
 
 *** Variables ***
 
@@ -18,6 +19,17 @@ Unlogged User Should Be Able To Attempt Login
     Unlogged User Should Be Able To Open Login Page
     LoginPage.Fill Credentials and Login  ${CREDENTIALS}
 
+Logged User Should Be Able to Check Bookings
+    UserPage.Open Bookings
+
+Logged User Should Be Able to Check Profile
+    UserPage.Open Profile
+
+Logged User Should Be Able to Check Wishlist
+    UserPage.Open Wishlist
+
+Logged User Should Be Able to Check Newsletter
+    UserPage.Open Newsletter
 
 
 
