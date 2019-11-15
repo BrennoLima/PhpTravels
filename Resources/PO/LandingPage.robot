@@ -21,4 +21,5 @@ Open Login Page
     Click Link  ${LOGIN}
 
 Select Store Data
-    Click Element  ${STORE_DATA}
+    ${IsElementVisible} =  run keyword and return status  Element Should Be Visible  ${STORE_DATA}
+    Run Keyword If  ${IsElementVisible}  Click Element  ${STORE_DATA}
