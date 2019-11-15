@@ -31,5 +31,13 @@ Logged User Should Be Able to Check Wishlist
 Logged User Should Be Able to Check Newsletter
     UserPage.Open Newsletter
 
+Fill Flight Information
+    SearchPage.Select Flight Class
+    SearchPage.Fill Origin
+    SearchPage.Fill Destination
+    SearchPage.Fill Depart Date
+    SearchPage.Fill Return Date
+    SearchPage.Click Search Flight Button
+
 
 

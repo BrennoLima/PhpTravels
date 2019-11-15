@@ -7,7 +7,7 @@ ${BOOKINGS} =  xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div[1]/div[1]/as
 ${PROFILE} =  xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div[1]/div[1]/aside/nav/ul/li[2]/a
 ${WISHLIST} =  xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div[1]/div[1]/aside/nav/ul/li[3]/a
 ${NEWSLETTER} =  xpath=/html/body/div[2]/div[1]/div[2]/div[2]/div/div[1]/div[1]/aside/nav/ul/li[4]/a
-
+${FLIGHTS_BUTTON} =  xpath=//*[@id="mobileMenuMain"]/nav/ul/li[3]/a
 *** Keywords ***
 Check
     Page Title Should Be  ${USER_PAGE_TITLE}
