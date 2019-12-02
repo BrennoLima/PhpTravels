@@ -2,6 +2,8 @@
 Resource  PO/LandingPage.robot
 Resource  PO/LoginPage.robot
 Resource  PO/UserPage.robot
+Resource  PO/SearchPage.robot
+Resource  PO/ResultsPage.robot
 
 *** Variables ***
 
@@ -31,13 +33,21 @@ Logged User Should Be Able to Check Wishlist
 Logged User Should Be Able to Check Newsletter
     UserPage.Open Newsletter
 
-Fill Flight Information
-    SearchPage.Select Flight Class
-    SearchPage.Fill Origin
-    SearchPage.Fill Destination
-    SearchPage.Fill Depart Date
-    SearchPage.Fill Return Date
-    SearchPage.Click Search Flight Button
+User Should Be Able to Search For Hotel
+    [Arguments]  ${HOTEL_DETAILS}
+    User Should Be Able to Fill Hotel Information  ${HOTEL_DETAILS}
+    ResultsPage.Check
+
+User Should Be Able to Fill Hotel Information
+    [Arguments]  ${HOTEL_DETAILS}
+    SearchPage.Open Hotel Search Tab
+    SearchPage.Fill Destination  ${HOTEL_DETAILS.destintion}
+    SearchPage.Fill Check In  ${HOTEL_DETAILS.checkIn}
+    SearchPage.Fill Check Out  ${HOTEL_DETAILS.checkOut}
+    SearchPage.Search
+
+Logged User Should Be Able To Go To Home Page
+        UserPage.Go to Home Page
 
 
 
